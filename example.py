@@ -1,10 +1,14 @@
 import os
 from nanovllm import LLM, SamplingParams
 from transformers import AutoTokenizer
+import torch
+
+os.environ["TORCH_COMPILE_DISABLE"] = "1"
+torch.compiler.disable
 
 
 def main():
-    path = os.path.expanduser("~/.cache/huggingface/Qwen3-0.6B/")
+    path = os.path.expanduser("/home/spike/.cache/huggingface/hub/models--Qwen--Qwen3-0.6B/snapshots/c1899de289a04d12100db370d81485cdf75e47ca")
     tokenizer = AutoTokenizer.from_pretrained(path)
     llm = LLM(path, enforce_eager=True, tensor_parallel_size=1)
 
@@ -27,7 +31,7 @@ def main():
     for prompt, output in zip(prompts, outputs):
         print("\n")
         print(f"Prompt: {prompt!r}")
-        print(f"Completion: {output['txt']!r}")
+        print(f"Completion: {output!r}")
 
 
 if __name__ == "__main__":
