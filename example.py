@@ -4,7 +4,7 @@ from transformers import AutoTokenizer
 
 
 def main():
-    path = os.path.expanduser("~/huggingface/Qwen3-0.6B/")
+    path = os.path.expanduser("~/.cache/huggingface/Qwen3-0.6B/")
     tokenizer = AutoTokenizer.from_pretrained(path)
     llm = LLM(path, enforce_eager=True, tensor_parallel_size=1)
 
@@ -27,7 +27,7 @@ def main():
     for prompt, output in zip(prompts, outputs):
         print("\n")
         print(f"Prompt: {prompt!r}")
-        print(f"Completion: {output['text']!r}")
+        print(f"Completion: {output['txt']!r}")
 
 
 if __name__ == "__main__":
