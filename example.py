@@ -4,7 +4,7 @@ from transformers import AutoTokenizer
 import torch
 
 def main():
-    path = os.path.expanduser("/home/spike/.cache/huggingface/hub/models--Qwen--Qwen3-0.6B/snapshots/c1899de289a04d12100db370d81485cdf75e47ca")
+    path = os.path.expanduser("~/huggingface/Qwen3-0.6B/")
     tokenizer = AutoTokenizer.from_pretrained(path)
     llm = LLM(path, enforce_eager=True, tensor_parallel_size=1)
 

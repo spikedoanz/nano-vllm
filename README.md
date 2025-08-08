@@ -2,12 +2,6 @@
 
 A lightweight vLLM implementation built from scratch.
 
-## Key Features
-
-* 🚀 **Fast offline inference** - Comparable inference speeds to vLLM
-* 📖 **Readable codebase** - Clean implementation in ~ 1,200 lines of Python code
-* ⚡ **Optimization Suite** - Prefix caching, Tensor Parallelism, Torch compilation, CUDA graph, etc.
-
 ## Installation
 
 ```bash
@@ -40,7 +34,7 @@ outputs[0]["text"]
 See `bench.py` for benchmark.
 
 **Test Configuration:**
-- Hardware: RTX 4070 Laptop (8GB)
+- Hardware: RTX 3090
 - Model: Qwen3-0.6B
 - Total Requests: 256 sequences
 - Input Length: Randomly sampled between 100–1024 tokens
@@ -49,10 +43,5 @@ See `bench.py` for benchmark.
 **Performance Results:**
 | Inference Engine | Output Tokens | Time (s) | Throughput (tokens/s) |
 |----------------|-------------|----------|-----------------------|
-| vLLM           | 133,966     | 98.37    | 1361.84               |
-| Nano-vLLM      | 133,966     | 93.41    | 1434.13               |
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=GeeeekExplorer/nano-vllm&type=Date)](https://www.star-history.com/#GeeeekExplorer/nano-vllm&Date)
+| vLLM           | 133,966     | N/A      | N/A                   |
+| Nano-vLLM      | 133,966     | 93.41    | 4545.64tok/s          |
